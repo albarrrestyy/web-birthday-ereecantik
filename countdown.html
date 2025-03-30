@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Ulang Tahun Rere</title>
+    <link rel="stylesheet" href="styles.css">
+    <#script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Cek apakah sesi ini sudah melewati welcome
+            if (!sessionStorage.getItem("sudahLewatWelcome")) {
+                window.location.href = "welcome.html"; // Jika belum, alihkan ke welcome.html
+            }
+        });
+    </script>
+</head>
+<body>
+
+    <div id="countdown">
+        <h2>Hitung Mundur ke Ulang Tahun Rere 🎉</h2>
+        <p id="timer"></p>
+        <button id="goToMainPage">Lanjut ke HalamanUtama</button>
+    </div>
+
+    <script src="countdown.js"></script>
+
+</body>
+</html>

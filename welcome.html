@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Sayaang</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(45deg, #ffebf0, #ffc0cb, #ff80ab);
+            background-size: 300% 300%;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            animation: backgroundShift 6s infinite alternate;
+        }
+
+        @keyframes backgroundShift {
+            0% { background-position: left; }
+            100% { background-position: right; }
+        }
+
+        #welcome-text {
+            font-size: 2em;
+            color: #ff4081;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #ff4081;
+            width: 0;
+            animation: typing 2s steps(20, end) forwards, blink 0.7s infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        #enter-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #ff4081;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out 2s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        #enter-btn:hover {
+            background-color: #d81b60;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="welcome-text">Selamat Datang, Sayaang!</h1>
+    <button id="enter-btn" onclick="masukCountdown()">Masuk</button>
+
+    <script>
+        function masukCountdown() {
+            sessionStorage.setItem("sudahLewatWelcome", "true"); // Tandai bahwa sesi ini sudah lewat welcome
+            window.location.href = "countdown.html"; // Masuk ke halaman countdown
+        }
+    </script>
+
+</body>
+</html>
